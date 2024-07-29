@@ -11,4 +11,6 @@ nav {
 
 nav span {
   font-family: 'Bungee', cursive;
+  font-size: 2em;
+  padding-top: 0.75em;
 }
