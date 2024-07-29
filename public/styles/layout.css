@@ -19,6 +19,8 @@ body {
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
+  margin: 0; /* Reset any default margin that might interfere */
+  padding-top: 120px; /* Ensure there is space to push the content below the nav */
 }
 
 /*
