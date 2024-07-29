@@ -1,0 +1,19 @@
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #feb416;
+}
+
+header img {
+  height: auto; /* Maintain the aspect ratio */
+  display: block; /* Treat the image as a block element */
+  padding-top: 5px;
+}
+
+header h2 {
+  color: #ffffff;
+  font-weight: 300;
+}
