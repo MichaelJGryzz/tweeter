@@ -23,6 +23,8 @@ body {
   padding-top: 120px; /* Ensure there is space to push the content below the nav */
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+main {
+  width: 90%;
+  margin: 0 auto; /* Center align to the body */
+  background-color: #f4f1ec; /* Same bacground color as the <body> element */
+}
