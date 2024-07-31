@@ -53,3 +53,7 @@
   font-family: 'Bungee', cursive;
   margin-right: 12px;
 }
+
+.new-tweet .counter.error {
+  color: #ff0000; /* Red colour for when character limit is exceeded */
+}
