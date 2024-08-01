@@ -1,0 +1,89 @@
+article.tweet {
+  display: flex;
+  flex-direction: column;
+  border: 4px solid #545149;
+  padding: 10px;
+  margin-top: 45px;
+  background-color: inherit;
+  transition: box-shadow 0s ease-in-out;
+}
+
+article.tweet:hover {
+  box-shadow: 7px 7px 0px #c6c8e7;
+}
+
+article.tweet header {
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ background-color: inherit;
+ background-image: inherit;
+ height: 80px;
+}
+
+.tweet-user-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 3px;
+}
+.tweet-user-info img {
+  display: block; /* Treat the image as a block element */
+  width: 70px;  /* Set a specific width */
+  height: 70px; /* Set a specific height */
+  object-fit: cover; /* Ensures the image fits nicely within the specified dimensions */
+}
+
+.tweet-user-info h3 {
+  color: #545149;
+  font-weight: 300;
+}
+
+.tweet-user-handle {
+  color: #c6c8e7;
+  margin-right: 10px;
+}
+
+.tweet-content {
+  border-bottom: 4px solid #545149;
+}
+
+.tweet-content p {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-left: 25px;
+}
+
+article.tweet footer {
+display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ background-color: inherit;
+ background-image: inherit;
+ height: 50px;
+}
+
+article.tweet footer p {
+  display: flex;
+  align-items: center;
+  font-size: 17px;
+  margin-left: 25px;
+}
+
+.tweet-icons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 25px;
+  width: 85px;
+  font-size: 19px;
+  color: #4056A1;
+  cursor: pointer;
+}
+
+.tweet-icons i:hover {
+  color: #d0a30f;
+}
