@@ -5,6 +5,21 @@ $(document).ready(function() {
     // Prevent the default form submission behaviour
     event.preventDefault();
 
+    // Get the tweet content from the textarea using the ID tweet-text
+    const tweetContent = $('#tweet-text').val().trim();
+
+    // Validation 1: Check if the tweet content is empty
+    if (!tweetContent) {
+      alert('Error: Cannot tweet a blank tweet!');
+      return; // Prevent form submission
+    }
+
+    // Validation 2: Check if the tweet contet exceeds 140 characters
+    if (tweetContent.length > 140) {
+      alert('Error: Cannot tweet if more than 140 characters!');
+      return; // Prevent form submission
+    }
+
     // Serialize the form data
     const serializedData = $(this).serialize();
 
