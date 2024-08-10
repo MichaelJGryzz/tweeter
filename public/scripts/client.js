@@ -52,7 +52,7 @@ $(document).ready(function() {
         <div class="tweet-content">
           <p>${tweet.content.text}</p>
         <footer>
-          <time>${new Date(tweet.created_at).toLocaleDateString()}</time>
+          <time>${timeago.format(tweet.created_at)}</time>
           <div class="tweet-icons">
             <i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
