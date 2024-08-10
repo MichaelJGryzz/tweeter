@@ -1,31 +1,5 @@
 $(document).ready(function() {
 
-// Fake data taken from initial-tweets.json
-const tweetData = [
-  {
-    "user": {
-      "name": "Newton",
-      "avatars": "https://i.imgur.com/73hZDYK.png"
-      ,
-      "handle": "@SirIsaac"
-    },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1722539700796
-  },
-  {
-    "user": {
-      "name": "Descartes",
-      "avatars": "https://i.imgur.com/nlhLi3I.png",
-      "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1722626100796
-  },
-]
-
   // jQuery event listener for "submit"
   $( '#tweet-form' ).on('submit', function(event) {
     // Prevent the default form submission behaviour
@@ -35,20 +9,21 @@ const tweetData = [
     const serializedData = $(this).serialize();
 
     //Send the serialized data to the server using an Ajax POST request
-    $.ajax({
-      method: 'POST',
-      url: '/tweets',
-      data: serializedData,
-      success: function(response) {
-        // Reset the form for new input
-        $('#tweet-form')[0].reset();
-      },
-      error: function(error) {
+    $.post('/tweets', serializedData)
+      .then(() => {
+        // Clear the textarea with the ID tweet-text
+        $('#tweet-text').val('');
+
+        // Clear the child elements of tweets-container
+        $('.tweets-container').empty();
+
+        // Load the updated tweets
+        loadTweets();
+      })
+      .catch(error => {
         console.error('Error posting tweet', error);
-      }
     });
   });
-  
 
   // renderTweets and function that takes in an array of tweet objects (tweetData) and appends each one to the #tweets-container
   const renderTweets = function(tweets) {
@@ -57,7 +32,7 @@ const tweetData = [
       // calls createTweetElement for each tweet
       const $tweet = createTweetElement(tweet);
       // takes return value and appends it to the tweets container
-      $('.tweets-container').append($tweet);
+      $('.tweets-container').prepend($tweet);
     });
   }
 
@@ -90,6 +65,18 @@ const tweetData = [
     return $tweet;
   }
 
-  // Render the tweets using the fake data
-  renderTweets(tweetData);
+  // loadTweets function to fetch and load tweets from the server
+  const loadTweets = function() {
+    $.get('/tweets')
+      .then(tweets => {
+        // Render the tweets using from the server
+        renderTweets(tweets);
+      })
+      .catch(error => {
+        console.error('Error fetching tweet', error);
+      });
+  }
+
+  // Load tweets on page load
+  loadTweets();
 });
