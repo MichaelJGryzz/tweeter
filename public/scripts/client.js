@@ -14,7 +14,7 @@ $(document).ready(function() {
       return; // Prevent form submission
     }
 
-    // Validation 2: Check if the tweet contet exceeds 140 characters
+    // Validation 2: Check if the tweet content exceeds 140 characters
     if (tweetContent.length > 140) {
       alert('Error: Cannot tweet if more than 140 characters!');
       return; // Prevent form submission
