@@ -56,21 +56,28 @@ $(document).ready(function() {
     });
   }
 
+  // escape function used to ensure that any user-generated content is safely encoded, preventing XSS attacks.
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   // createTweetElement function that takes in a tweet object and returns a tweet <article> element containing the enture HTML structure of the tweet
   const createTweetElement = function(tweet) {
     let $tweet = $(`
       <article class="tweet">
         <header>
           <div class="tweet-user-info">
-            <img src="${tweet.user.avatars}" alt="User Avatar" />
-            <h3>${tweet.user.name}</h3>
+            <img src="${escape(tweet.user.avatars)}" alt="User Avatar" />
+            <h3>${escape(tweet.user.name)}</h3>
           </div>
           <div class="tweet-user-handle">
-            <p>${tweet.user.handle}</p>
+            <p>${escape(tweet.user.handle)}</p>
           </div>
         </header>
         <div class="tweet-content">
-          <p>${tweet.content.text}</p>
+          <p>${escape(tweet.content.text)}</p>
         <footer>
           <time>${timeago.format(tweet.created_at)}</time>
           <div class="tweet-icons">
