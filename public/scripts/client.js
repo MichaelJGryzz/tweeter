@@ -5,6 +5,9 @@ $(document).ready(function() {
     // Prevent the default form submission behaviour
     event.preventDefault();
 
+    // Hide the error message (sliding up) before starting validation
+    $('#error-message').slideUp();
+
     // Get the tweet content from the textarea using the ID tweet-text
     const tweetContent = $('#tweet-text').val().trim();
 
