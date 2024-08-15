@@ -29,6 +29,11 @@ $(document).ready(function() {
         // Clear the textarea with the ID tweet-text
         $('#tweet-text').val('');
 
+        // Reset the counter to 140
+        const $counter = $('.new-tweet .counter');
+        $counter.text('140');
+        $counter.removeClass('error');
+
         // Clear the child elements of tweets-container
         $('.tweets-container').empty();
 
