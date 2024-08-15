@@ -8,16 +8,24 @@ $(document).ready(function() {
     // Get the tweet content from the textarea using the ID tweet-text
     const tweetContent = $('#tweet-text').val().trim();
 
+    // Error message variable
+    let errorMessage = '';
+
     // Validation 1: Check if the tweet content is empty
     if (!tweetContent) {
-      alert('Error: Cannot tweet a blank tweet!');
-      return; // Prevent form submission
+      errorMessage = 'Error: Cannot tweet a blank tweet!';
     }
 
     // Validation 2: Check if the tweet content exceeds 140 characters
-    if (tweetContent.length > 140) {
-      alert('Error: Cannot tweet if more than 140 characters!');
-      return; // Prevent form submission
+    else if (tweetContent.length > 140) {
+      errorMessage = 'Error: Cannot tweet if more than 140 characters!';
+    }
+
+    // If there is an error message, display it
+    if (errorMessage) {
+      $('.error-text').text(errorMessage); // Update the text inside the .error-text span
+      $('#error-message').slideDown(); // Slide down the error message container
+      return; // Prevent form submission if error is present
     }
 
     // Serialize the form data
