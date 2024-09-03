@@ -36,6 +36,7 @@ article.tweet header {
 .tweet-user-info h3 {
   color: #545149;
   font-weight: 300;
+  margin-left: 12px;
 }
 
 .tweet-user-handle {
