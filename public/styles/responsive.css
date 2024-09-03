@@ -1,0 +1,44 @@
+/* Mobile Styles (Default) */
+@media screen and (max-width: 768px) {  
+  nav {
+    background-color: #feb416;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  }
+}
+
+/* Tablet Styles */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  nav {
+    background-color: #feb416;
+    background-image: url("https://www.transparenttextures.com/patterns/stardust.png");
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1025px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 60px;
+    padding-top: 260px;
+  }
+
+  .profileBox {
+    width: 27%;
+    margin-right: 17%;
+  }
+
+  .container {
+    width: 70%;
+    margin-left: 8%;
+  }
+}
+
+/* Large Desktop Styles */
+@media screen and (min-width: 2224px) {
+  body {
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+}
