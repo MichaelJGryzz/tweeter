@@ -15,7 +15,7 @@
 }
 
 /* Desktop Styles */
-@media screen and (min-width: 1025px) {
+@media screen and (min-width: 1025px) and (max-width: 2224px) {
   body {
     display: flex;
     flex-direction: row;
@@ -36,7 +36,7 @@
 }
 
 /* Large Desktop Styles */
-@media screen and (min-width: 2224px) {
+@media screen and (min-width: 2225px) {
   body {
     padding-left: 120px;
     padding-right: 120px;
